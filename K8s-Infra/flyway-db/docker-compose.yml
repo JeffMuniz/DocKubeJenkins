@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  db:
+    image: "postgres:12.2-alpine"
+    environment:
+        POSTGRES_USER: flyway
+        POSTGRES_PASSWORD: flyway
+        POSTGRES_DB: flyway_teste
+        #POSTGRES_HOST_AUTH_METHOD: trust
+  flyway:
+    image: flyway/flyway:6.4.1-alpine
+    environment:
+      - FLYWAY_EDITION=community
+    command: -url=jdbc:postgresql://db:5432/flyway_teste -schemas=flyway -user=flyway -password=flyway -connectRetries=10 migrate
+    volumes:
+      - ./migracoes:/flyway/sql/

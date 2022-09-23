@@ -1,0 +1,68 @@
+global:
+  imagePullSecrets:
+    - name: "regcred"
+    - name: "regcred-gitlab"
+tombombadil:
+  enabled: true
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 5555
+  image:
+    tag: 1.1.0-development.20
+  stage:
+    image:
+      tag: 1.1.5-development.1
+  app:
+    port: 5555
+    elasticsearch:
+      prefix: "nome_servidor"
+      host: "http://mac.svc.cluster.local:9200"
+      username: "macna"
+  istio:
+    enabled: true
+    gateways:
+      - "istio-system/macna-expose-tombombadil-gw"
+      - "istio-system/macna-expose-consumerz-gw"
+nome_db-server:
+  enabled: true
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 4444
+  image:
+    tag: 1.2.1-development.1
+  stage:
+    image:
+      tag: 2.1.0-development.2
+  app:
+    port: 4444
+    paymentLite:
+      address: "http://payment-process-lite.aws.dev.k8s.macna-devel.com.br"
+    discoveryLite:
+      address: "http://machina-pod-app':5555"
+    postgres:
+      host:machina-postgres-postgresql.macna-pg.svc.cluster.local
+      port: 5432
+      database: nome_db-server
+      username: nome_db-server
+    kafka:
+      client: "nome_db-server"
+      brokers: "kafka.macna.qa.inlabs.app:32092,kafka.macna.qa.inlabs.app:32192,kafka.macna.qa.inlabs.app:32292"
+      topics:
+        order: order
+  istio:
+    enabled: true
+    gateways:
+      - "istio-system/macna-expose-nome_db-server-gw"
+      - "istio-system/macna-expose-consumery-gw"
+gollum:
+  enabled: true
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 3333
+  image:
+    tag: latest
+  server:
+    port: 3333

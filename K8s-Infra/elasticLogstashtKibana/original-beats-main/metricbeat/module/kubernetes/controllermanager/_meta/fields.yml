@@ -1,0 +1,112 @@
+- name: controllermanager
+  type: group
+  description: >
+    Controller manager metrics
+  release: ga
+  fields:
+    - name: url
+      type: keyword
+      description: >
+        Request url
+    - name: verb
+      type: keyword
+      description: >
+        Request verb
+    - name: code
+      type: keyword
+      description: >
+        HTTP code
+    - name: method
+      type: keyword
+      description: >
+        HTTP method
+    - name: host
+      type: keyword
+      description: >
+        Request host
+    - name: name
+      type: keyword
+      description: >
+        Name for the resource
+    - name: zone
+      type: keyword
+      description: >
+        Infrastructure zone
+    - name: process
+      type: group
+      fields:
+        - name: cpu.sec
+          type: double
+          description: CPU seconds
+        - name: memory.resident.bytes
+          type: long
+          format: bytes
+          description: Bytes in resident memory
+        - name: memory.virtual.bytes
+          type: long
+          format: bytes
+          description: Bytes in virtual memory
+        - name: fds.open.count
+          type: long
+          description: Number of open file descriptors
+        - name: fds.max.count
+          type: long
+          description: Maximum number of open file descriptors
+        - name: started.sec
+          type: double
+          description: Seconds since the process started
+    - name: client
+      type: group
+      fields:
+        - name: request.count
+          type: long
+          description: >
+            Number of requests as client
+        - name: request.duration.us.bucket.*
+          type: object
+          object_type: long
+          description: Response latency distribution, histogram buckets
+        - name: request.duration.us.sum
+          type: long
+          description: Request duration, sum in microseconds
+        - name: request.duration.us.count
+          type: long
+          description: Request duration, number of operations
+    - name: workqueue
+      type: group
+      fields:
+        - name: longestrunning.sec
+          type: double
+          description: Longest running processors
+        - name: unfinished.sec
+          type: double
+          description: Unfinished processors
+        - name: adds.count
+          type: long
+          description: Workqueue add count
+        - name: depth.count
+          type: long
+          description: Workqueue depth count
+        - name: retries.count
+          type: long
+          description: Workqueue number of retries
+    - name: node.collector
+      type: group
+      fields:
+        - name: eviction.count
+          type: long
+          description: Number of node evictions
+        - name: unhealthy.count
+          type: long
+          description: Number of unhealthy nodes
+        - name: count
+          type: long
+          description: Number of nodes
+        - name: health.pct
+          type: long
+          description: Percentage of healthy nodes
+    - name: leader.is_master
+      type: boolean
+      description: >
+        Whether the node is master
+
