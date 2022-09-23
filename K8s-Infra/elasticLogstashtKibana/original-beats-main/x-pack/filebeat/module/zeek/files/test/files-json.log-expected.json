@@ -13,14 +13,14 @@
             "info"
         ],
         "file.hash.md5": "79e4a9840d7d3a96d7c04fe2434c892e",
-        "file.hash.sha1": "a8985d3a65e5e5c4b2d7d66d40c6dd2fb19c5436",
+        "file.hash.sha1": "some-entropy",
         "file.mime_type": "application/pkix-cert",
         "fileset.name": "files",
         "input.type": "log",
         "log.offset": 0,
         "related.hash": [
             "79e4a9840d7d3a96d7c04fe2434c892e",
-            "a8985d3a65e5e5c4b2d7d66d40c6dd2fb19c5436"
+            "some-entropy"
         ],
         "related.ip": [
             "10.178.98.102",
@@ -50,7 +50,7 @@
         "zeek.files.session_ids": [
             "C8I0zn3r9EPbfLgta6"
         ],
-        "zeek.files.sha1": "a8985d3a65e5e5c4b2d7d66d40c6dd2fb19c5436",
+        "zeek.files.sha1": "some-entropy",
         "zeek.files.source": "SSL",
         "zeek.files.timedout": false,
         "zeek.files.tx_host": "35.199.178.4",
