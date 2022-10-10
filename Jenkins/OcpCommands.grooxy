@@ -1,18 +1,181 @@
-  1 oc login -u jmoura.ext
-   2 oc get cronjob
-   3 oc delete cronjob/post-gerarpedido
-   4 oc describe rolebinding.rbac -n p1m-repomed-hml
-   5 oc get cronjob
-   6 oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
-   7 oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
-   8 oc get cronjob
-   9 oc get cronjob -n p1m-repomed-hml
-  10 oc get cronjob -n p1m-repomed-prod
-  11 oc project p1m-repomed-prod
-  12 oc project p1m-repomed-prd
-  13 oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
-  14 oc delete cronjob/post-gerarpedido
-  15 oc delete cronjob *
-  16 oc delete cronjob all
-  17 oc delete cronjob
-  18 oc delete cronjob --all
+oc login -u jmoura.ext
+oc get cronjob
+oc delete cronjob/post-gerarpedido
+oc describe rolebinding.rbac -n p1m-repomed-hml
+oc get cronjob
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
+oc get cronjob
+oc get cronjob -n p1m-repomed-hml
+oc get cronjob -n p1m-repomed-prod
+oc project p1m-repomed-prod
+oc project p1m-repomed-prd
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n ...
+oc delete cronjob/post-gerarpedido
+oc delete cronjob *
+oc delete cronjob all
+oc delete cronjob
+oc delete cronjob --all
+oc login
+oc list all
+oc list projects all
+oc list projects
+oc list project
+oc get  project
+oc login Macnaima.Macnamara
+oc login -u Macnaima.Macnamara
+oc get project
+oc select
+oc project p1m-repomedfront-dev  
+oc delete p1m-repomedfront-dev  
+oc project
+oc delete p1m-repomedfront-dev
+oc edit project  p1m-repomedfront-dev
+oc project machina-reposicao-estoque-dev
+oc delete p1m-repomedfront-dev
+oc delete project p1m-repomedfront-dev
+oc get project
+oc edit project p1m-repomed-dev 
+oc project machina-reposicao-estoque-dev
+oc get all
+for object in $(oc api-resources --namespaced=true -o name)
+do`
+  oc get -o yaml --export $object > $object.yaml
+done$ for object in $(oc api-resources --namespaced=true -o name)
+do`
+  oc get -o yaml --export $object > $object.yaml
+$ for object in $(oc api-resources --namespaced=true -o name)
+do`
+  oc get -o yaml --export $object > $object.yaml
+oc get -o yaml --export all > project.yaml
+ice-machina-reposicao-estoque-dev.cpdh.machina.local          reposicaomedicamentoservice   8080-tcp
+ oc get all
+oc get -o yaml --export all > project.yaml
+oc get --help
+oc get -o yaml --export all > project.yaml
+oc export all > project.yaml
+oc export all --as-template=template_name template_filename
+oc --help
+oc get -o yaml --export all > project.yaml
+oc get -o template yaml --as-template= template_project
+oc login -u Macnaima.Macnamara
+oc describe rolebinding.rbac
+oc describe rolebinding.rbac|get jenkins
+oc describe rolebinding.rbac | jenkins
+oc describe rolebinding.rbac | more
+oc describe rolebinding.rbac| grep jenkins
+pip intall grep
+pip install grep
+oc describe rolebinding.rbac| grep jenkins
+grep
+oc adm policy who-can
+oc adm policy who-can get pod
+oc adm policy who-can get bc
+oc project
+oc project p1m-repomed-dev
+oc adm policy who-can get bc
+oc describe rolebinding.rbac
+oc project
+oc describe rolebinding.rbac -n p1m-repomed-dev
+oc adm policy add-role-to-user admin jenkins -n p1m-repomed-dev
+oc describe rolebinding.rbac -n p1m-repomed-dev
+oc adm policy add-role-to-user admin system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-dev
+oc describe rolebinding.rbac -n p1m-repomed-dev
+oc project
+oc describe rolebinding.rbac|get jenkins
+oc describe rolebinding.rbac
+oc describe rolebinding.rbac -n p1m-repomed-dev
+  Kind   Name
+oc adm policy who-can get bc
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n example-openshift-dockerfile
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-dev
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-dev-dev
+
+oc project run-exp
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-prd
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n run-exp
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins
+
+
+oc delete cronjob/post-gerarpedido
+oc edit project p1m-repomed-dev 
+
+oc describe rolebinding.rbac -n p1m-repomed-hml
+oc get cronjob
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-prd
+git push
+oc get cronjob
+oc get cronjob -n p1m-repomed-hml
+oc get cronjob -n p1m-repomed-prod
+git push
+oc project p1m-repomed-prod
+git push
+oc project p1m-repomed-prd
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins -n p1m-repomed-prd
+git push
+oc delete cronjob/post-gerarpedido
+oc delete cronjob *
+oc delete cronjob all
+
+oc delete cronjob post-runexp
+oc project
+oc project p1m-repomed-dev
+oc delete cronjob post-runexp
+git push
+oc project runexp
+oc project run-exp-dev
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins
+git push
+oc project run-exp-dev
+oc delete cronjob post-runexp
+oc delete cronjob --all
+
+oc project machina-reposicao-estoque-dev
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins
+oc delete pvc -dev/pvc-pbm-repomed-dev   
+oc project
+oc delete pvc pvc-pbm-repomed-hml
+oc project
+oc get pvc
+oc create -f nfs-claim.yaml
+oc get pvc
+oc create -f nfs-claim.yaml
+setsebool -P virt_use_nfs 1
+oc project
+oc project --list
+oc project --listall
+oc project --all
+oc project 
+oc project aurotej
+oc login https://openshift-corp.machina.local:8443 --token=SOME-ID-OR-ID
+oc create -f nfs-pv.yaml
+oc create -f nfs-claim.yaml
+git push
+oc login https://openshift-corp.machina.local:8443 --token=SOME-ID-OR-ID
+oc login https://openshift-corp.machina.local:8443 --token=SOME-ID-OR-ID
+oc delete all --selector app=p1m-repomed-dev
+oc get all
+oc delete all
+oc delete --all
+oc delete --all -n machina-repoe-estoques-hml
+git push
+oc login https://openshift-corp.machina.local:8443 --token=SOME-ID-OR-ID
+oc policy add-role-to-user edit system:serviceaccount:cicd-tools:jenkins
+git push
+ 
+git push
+oc login https://openshift-corp.machina.local:8443 --token=SOME-ID-OR-ID
+oc project machina-repoe-estoques-hml
+oc get pv
+oc describe pv teste-nfs-filecls2
+cat ../nfs-claim.yaml
+oc describe pv teste-nfs-filecls2
+oc describe pv nfs-pvc-machina-machina-repoe-estoques-batch-hml
+oc create -f nfs-claim.yaml
+oc create -f ../nfs.yaml
+oc create -f ../nfs-pv.yaml
+oc describe pv nfs-pvc-machina-machina-repoe-estoques-batch-hml
+oc describe pv nfs-pv-reposicao-service-hml
+oc delete pv nfs-pv-reposicao-service-hml
+oc create -f ../nfs-pv.yaml
+oc describe pv nfs-pv-reposicao-service-hml
